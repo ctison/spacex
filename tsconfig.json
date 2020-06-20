@@ -15,7 +15,9 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"]
+      "@/components": ["components/"],
+      "@/components/*": ["components/*"],
+      "@/model/*": ["model/*"]
     }
   },
   "exclude": ["node_modules"],

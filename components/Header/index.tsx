@@ -1,13 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
 import { fade, makeStyles } from '@material-ui/core/styles'
-import { AppBar, Toolbar, Typography, InputBase, IconButton, Badge } from '@material-ui/core'
-import AccountCircle from '@material-ui/icons/AccountCircle'
-import NotificationsIcon from '@material-ui/icons/Notifications'
+import { AppBar, Toolbar, Typography, InputBase } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
+    zIndex: theme.zIndex.drawer + 1,
     boxShadow: 'none',
     borderBottom: '1px solid lightgrey',
     color: 'rgb(158, 158, 158)',
@@ -64,11 +63,11 @@ export const Header: React.FC = () => {
   const classes = useStyles()
   return (
     <>
-      <AppBar color='default' className={classes.appBar} position='static'>
+      <AppBar color='default' className={classes.appBar} position='relative'>
         <Toolbar>
-          <Typography variant='h6'>
+          <Typography variant='h6' color='textPrimary'>
             <Link href='/'>
-              <a>Next.JS</a>
+              <a>SpaceX Data</a>
             </Link>
           </Typography>
           <div className={classes.grow} />
@@ -85,21 +84,6 @@ export const Header: React.FC = () => {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
-          <IconButton aria-label='show 3 new notifications' color='inherit'>
-            <Badge badgeContent={3} color='secondary'>
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <IconButton
-            edge='end'
-            aria-label='account of current user'
-            // aria-controls={menuId}
-            aria-haspopup='true'
-            // onClick={handleProfileMenuOpen}
-            color='inherit'
-          >
-            <AccountCircle />
-          </IconButton>
         </Toolbar>
       </AppBar>
     </>
