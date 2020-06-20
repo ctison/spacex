@@ -1,0 +1,119 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "analyze": "ANALYZE=true yarn run build",
+    "start": "next start",
+    "format": "prettier --write '**/*.{js,jsx,ts,tsx,json,yaml,gql,md,html,css}'",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx pages/"
+  },
+  "dependencies": {
+    "@material-ui/core": "4.10.2",
+    "@material-ui/icons": "4.9.1",
+    "next": "9.4.4",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "9.4.4",
+    "@types/node": "14.0.13",
+    "@types/react": "16.9.38",
+    "@typescript-eslint/eslint-plugin": "3.3.0",
+    "@typescript-eslint/parser": "3.3.0",
+    "eslint": "7.3.0",
+    "eslint-plugin-import": "2.21.2",
+    "eslint-plugin-jsx-a11y": "6.3.1",
+    "eslint-plugin-react": "7.20.0",
+    "eslint-plugin-react-hooks": "4.0.4",
+    "husky": "4.2.5",
+    "lint-staged": "10.2.11",
+    "prettier": "2.0.5",
+    "typescript": "3.9.5"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "endOfLine": "lf",
+    "trailingComma": "all",
+    "printWidth": 100,
+    "jsxSingleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,yaml,gql,md,html,css}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "eslint"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+      "eslint:recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript",
+      "plugin:jsx-a11y/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "pages/**/*.tsx"
+        ],
+        "rules": {
+          "react/react-in-jsx-scope": "off"
+        }
+      },
+      {
+        "files": [
+          "*.tsx"
+        ],
+        "rules": {
+          "import/no-unresolved": "off",
+          "jsx-a11y/anchor-is-valid": "off",
+          "react/prop-types": "off"
+        }
+      }
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  },
+  "eslintIgnore": [
+    "next.config.js"
+  ],
+  "renovate": {
+    "enabledManagers": [
+      "npm",
+      "dockerfile"
+    ],
+    "extends": [
+      ":ignoreModulesAndTests",
+      ":pinAllExceptPeerDependencies",
+      ":separateMultipleMajorReleases",
+      ":combinePatchMinorReleases",
+      ":semanticPrefixFixDepsChoreOthers",
+      ":rebaseStalePrs",
+      ":prImmediately",
+      ":disableRateLimiting",
+      ":automergeAll",
+      ":ignoreUnstable",
+      ":updateNotScheduled",
+      ":enableVulnerabilityAlerts",
+      "docker:enableMajor",
+      "group:monorepos",
+      "group:recommended"
+    ]
+  }
+}

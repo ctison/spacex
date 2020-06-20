@@ -1,0 +1,11 @@
+*
+!/package.json
+!/yarn.lock
+!/tsconfig.json
+!/next.config.js
+!/next-env.d.ts
+!/.prettierignore
+!/pages/
+!/public/
+!/components/
+!/.env
