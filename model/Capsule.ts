@@ -7,8 +7,11 @@ export function useCapsule(
   return useSWR(`https://api.spacexdata.com/v3/capsules/${capsule_serial}` + query)
 }
 
-export function useCapsules(query = ''): responseInterface<Capsule[], unknown> {
-  return useSWR('https://api.spacexdata.com/v3/capsules' + query)
+export function useCapsules(
+  query = '',
+  initialData?: Capsule[],
+): responseInterface<Capsule[], unknown> {
+  return useSWR('https://api.spacexdata.com/v3/capsules' + query, { initialData: initialData })
 }
 
 export interface Capsule {
