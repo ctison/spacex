@@ -19,17 +19,22 @@ export const Page: NextPage<Props> = (props) => {
   const classes = useStyles()
   const capsules = useCapsules(
     '?filter=capsule_serial,capsule_id,status,type,original_launch',
-    props.capsules,
+    props.capsules
   )
   return (
     <>
-      <Breadcrumbs links={[{ label: 'SpaceX', href: '/spacex' }, { label: 'Capsules' }]} />
+      <Breadcrumbs
+        links={[{ label: 'SpaceX', href: '/spacex' }, { label: 'Capsules' }]}
+      />
       <Table
         isValidating={capsules.isValidating}
         columns={['ID', 'Serial', 'Status', 'Original Launch', 'Type']}
       >
         {capsules.data?.map((capsule) => (
-          <Link key={capsule.capsule_serial} href={`/capsule/${capsule.capsule_serial}`}>
+          <Link
+            key={capsule.capsule_serial}
+            href={`/capsule/${capsule.capsule_serial}`}
+          >
             <TableRow hover className={classes.tableRow}>
               <TableCell>{capsule.capsule_serial}</TableCell>
               <TableCell>{capsule.capsule_id}</TableCell>
@@ -48,7 +53,7 @@ export default Page
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const capsules = await fetch(
-    'https://api.spacexdata.com/v3/capsules?filter=capsule_serial,capsule_id,status,type,original_launch',
+    'https://api.spacexdata.com/v3/capsules?filter=capsule_serial,capsule_id,status,type,original_launch'
   ).then((res) => res.json())
   return { props: { capsules: capsules } }
 }

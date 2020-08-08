@@ -43,7 +43,11 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = (props) => {
               </MaterialLink>
             </NextLink>
           ))}
-          <MaterialLink color='inherit' underline='none' className={classes.link}>
+          <MaterialLink
+            color='inherit'
+            underline='none'
+            className={classes.link}
+          >
             <strong>{props.links[props.links.length - 1].label}</strong>
           </MaterialLink>
         </MaterialBreadcrumbs>

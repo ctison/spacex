@@ -22,8 +22,13 @@ export const Page: NextPage = () => {
   const dragons = useDragons('?filter=id,name,active,type')
   return (
     <>
-      <Breadcrumbs links={[{ label: 'SpaceX', href: '/spacex' }, { label: 'Dragons' }]} />
-      <Table isValidating={dragons.isValidating} columns={['ID', 'Name', 'Active', 'Type']}>
+      <Breadcrumbs
+        links={[{ label: 'SpaceX', href: '/spacex' }, { label: 'Dragons' }]}
+      />
+      <Table
+        isValidating={dragons.isValidating}
+        columns={['ID', 'Name', 'Active', 'Type']}
+      >
         {dragons.data?.map((dragon) => (
           <Link key={dragon.id} href={`/dragon/${dragon.id}`}>
             <TableRow hover className={classes.tableRow}>
@@ -31,7 +36,9 @@ export const Page: NextPage = () => {
               <TableCell>{dragon.name}</TableCell>
               <TableCell>
                 <Chip
-                  className={dragon.active ? classes.chipTrue : classes.chipFalse}
+                  className={
+                    dragon.active ? classes.chipTrue : classes.chipFalse
+                  }
                   label={`${dragon.active}`}
                 />
               </TableCell>

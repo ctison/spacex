@@ -1,6 +1,9 @@
 import useSWR, { responseInterface } from 'swr'
 
-export function useRocket(id: number, query = ''): responseInterface<Rocket, unknown> {
+export function useRocket(
+  id: number,
+  query = ''
+): responseInterface<Rocket, unknown> {
   return useSWR(`https://api.spacexdata.com/v3/rockets/${id}` + query)
 }
 
@@ -48,7 +51,7 @@ export interface Rocket {
       name: 'Mars Orbit'
       kg: 4020
       lb: 8860
-    },
+    }
   ]
   first_stage: {
     reusable: true

@@ -23,7 +23,11 @@ export const Page: NextPage = () => {
           Frontend for SpaceX data API
         </Typography>
         <Typography variant='subtitle1' align='center'>
-          <a href='https://github.com/r-spacex/SpaceX-API' target='_blank' rel='noreferrer'>
+          <a
+            href='https://github.com/r-spacex/SpaceX-API'
+            target='_blank'
+            rel='noreferrer'
+          >
             https://github.com/r-spacex/SpaceX-API
           </a>
         </Typography>

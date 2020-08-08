@@ -1,10 +1,15 @@
 import useSWR, { responseInterface } from 'swr'
 
-export function useLandingPad(id: string, query = ''): responseInterface<LandingPad, unknown> {
+export function useLandingPad(
+  id: string,
+  query = ''
+): responseInterface<LandingPad, unknown> {
   return useSWR(`https://api.spacexdata.com/v3/landpads/${id}` + query)
 }
 
-export function useLandingPads(query = ''): responseInterface<LandingPad[], unknown> {
+export function useLandingPads(
+  query = ''
+): responseInterface<LandingPad[], unknown> {
   return useSWR('https://api.spacexdata.com/v3/landpads' + query)
 }
 

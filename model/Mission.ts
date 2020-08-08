@@ -1,7 +1,9 @@
 import useSWR, { responseInterface } from 'swr'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function useMissions(query = ''): responseInterface<Mission[], any> {
+export default function useMissions(
+  query = ''
+): responseInterface<Mission[], any> {
   return useSWR<Mission[]>('' + query)
 }
 

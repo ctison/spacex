@@ -2,16 +2,20 @@ import useSWR, { responseInterface } from 'swr'
 
 export function useCapsule(
   capsule_serial: string,
-  query = '',
+  query = ''
 ): responseInterface<Capsule, unknown> {
-  return useSWR(`https://api.spacexdata.com/v3/capsules/${capsule_serial}` + query)
+  return useSWR(
+    `https://api.spacexdata.com/v3/capsules/${capsule_serial}` + query
+  )
 }
 
 export function useCapsules(
   query = '',
-  initialData?: Capsule[],
+  initialData?: Capsule[]
 ): responseInterface<Capsule[], unknown> {
-  return useSWR('https://api.spacexdata.com/v3/capsules' + query, { initialData: initialData })
+  return useSWR('https://api.spacexdata.com/v3/capsules' + query, {
+    initialData: initialData,
+  })
 }
 
 export interface Capsule {

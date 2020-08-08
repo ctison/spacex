@@ -32,11 +32,18 @@ export const Page: NextPage = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const classes = useStyles()
   const router = useRouter()
-  const core = useSWR<Core>(`https://api.spacexdata.com/v3/cores/${router.query.serial}`)
+  const core = useSWR<Core>(
+    `https://api.spacexdata.com/v3/cores/${router.query.serial}`
+  )
   let child = <></>
   if (core.isValidating) {
     child = (
-      <Box display='flex' justifyContent='center' alignItems='center' minHeight='80vh'>
+      <Box
+        display='flex'
+        justifyContent='center'
+        alignItems='center'
+        minHeight='80vh'
+      >
         <CircularProgress />
       </Box>
     )
@@ -85,7 +92,12 @@ export const Page: NextPage = () => {
         links={[
           { label: 'SpaceX', href: '/spacex' },
           { label: 'Cores', href: '/cores' },
-          { label: typeof router.query.serial == 'string' ? router.query.serial : 'Core Info' },
+          {
+            label:
+              typeof router.query.serial == 'string'
+                ? router.query.serial
+                : 'Core Info',
+          },
         ]}
       />
       <Typography variant='h4' align='center' gutterBottom>

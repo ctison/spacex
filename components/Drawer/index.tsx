@@ -74,7 +74,10 @@ export const Drawer: React.FC<DrawerProps> = () => {
     >
       <Toolbar />
       <div className={classes.drawerContainer}>
-        <List disablePadding subheader={<ListSubheader component='div'>Components</ListSubheader>}>
+        <List
+          disablePadding
+          subheader={<ListSubheader component='div'>Components</ListSubheader>}
+        >
           {listItems.map((item) => {
             if (!item.href) {
               item.href = `/${item.text.toLowerCase().replace(/ /, '-')}`
@@ -85,7 +88,7 @@ export const Drawer: React.FC<DrawerProps> = () => {
                   <ListItem
                     button
                     selected={router.pathname.startsWith(
-                      item.startsWith ?? item.href.replace(/s$/, ''),
+                      item.startsWith ?? item.href.replace(/s$/, '')
                     )}
                   >
                     <ListItemIcon>

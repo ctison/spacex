@@ -13,12 +13,19 @@ export const Page: NextPage = () => {
   const classes = useStyles()
   const router = useRouter()
   const capsuleSerial =
-    typeof router.query.serial == 'string' ? router.query.serial : 'Capsule Info'
+    typeof router.query.serial == 'string'
+      ? router.query.serial
+      : 'Capsule Info'
   const capsule = useCapsule(capsuleSerial)
   let child = <></>
   if (capsule.isValidating) {
     child = (
-      <Box display='flex' justifyContent='center' alignItems='center' minHeight='80vh'>
+      <Box
+        display='flex'
+        justifyContent='center'
+        alignItems='center'
+        minHeight='80vh'
+      >
         <CircularProgress />
       </Box>
     )

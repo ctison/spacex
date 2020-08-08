@@ -1,6 +1,9 @@
 import useSWR, { responseInterface } from 'swr'
 
-export function usePayload(payload_id: string, query = ''): responseInterface<Payload, unknown> {
+export function usePayload(
+  payload_id: string,
+  query = ''
+): responseInterface<Payload, unknown> {
   return useSWR(`https://api.spacexdata.com/v3/payloads/${payload_id}` + query)
 }
 

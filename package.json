@@ -39,9 +39,6 @@
   "prettier": {
     "semi": false,
     "singleQuote": true,
-    "endOfLine": "lf",
-    "trailingComma": "all",
-    "printWidth": 100,
     "jsxSingleQuote": true
   },
   "husky": {

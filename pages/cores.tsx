@@ -16,15 +16,22 @@ export const Page: NextPage = () => {
   const cores = useCores()
   return (
     <>
-      <Breadcrumbs links={[{ label: 'SpaceX', href: '/spacex' }, { label: 'Cores' }]} />
-      <Table isValidating={cores.isValidating} columns={['ID', 'Name', 'Block', 'Original Launch']}>
+      <Breadcrumbs
+        links={[{ label: 'SpaceX', href: '/spacex' }, { label: 'Cores' }]}
+      />
+      <Table
+        isValidating={cores.isValidating}
+        columns={['ID', 'Name', 'Block', 'Original Launch']}
+      >
         {cores.data?.map((core) => (
           <Link key={core.core_serial} href={`/core/${core.core_serial}`}>
             <TableRow hover className={classes.tableRow}>
               <TableCell>{core.core_serial}</TableCell>
               <TableCell>{core.status}</TableCell>
               <TableCell>{core.block ?? 'unknown'}</TableCell>
-              <TableCell>{new Date(core.original_launch).toUTCString()}</TableCell>
+              <TableCell>
+                {new Date(core.original_launch).toUTCString()}
+              </TableCell>
             </TableRow>
           </Link>
         ))}

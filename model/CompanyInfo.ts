@@ -1,6 +1,8 @@
 import useSWR, { responseInterface } from 'swr'
 
-export function useCompanyInfo(query = ''): responseInterface<CompanyInfo, unknown> {
+export function useCompanyInfo(
+  query = ''
+): responseInterface<CompanyInfo, unknown> {
   return useSWR('https://api.spacexdata.com/v3/info' + query)
 }
 

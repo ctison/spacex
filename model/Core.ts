@@ -1,6 +1,9 @@
 import useSWR, { responseInterface } from 'swr'
 
-export function useCore(core_serial: string, query = ''): responseInterface<Core, unknown> {
+export function useCore(
+  core_serial: string,
+  query = ''
+): responseInterface<Core, unknown> {
   return useSWR(`https://api.spacexdata.com/v3/cores/${core_serial}` + query)
 }
 

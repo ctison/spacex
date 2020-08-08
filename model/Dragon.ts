@@ -1,6 +1,9 @@
 import useSWR, { responseInterface } from 'swr'
 
-export function useDragon(id: string, query = ''): responseInterface<Dragon, unknown> {
+export function useDragon(
+  id: string,
+  query = ''
+): responseInterface<Dragon, unknown> {
   return useSWR(`https://api.spacexdata.com/v3/dragons/${id}` + query)
 }
 
