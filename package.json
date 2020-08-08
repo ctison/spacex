@@ -97,26 +97,9 @@
     "next.config.js"
   ],
   "renovate": {
-    "enabledManagers": [
-      "npm",
-      "dockerfile"
-    ],
     "extends": [
-      ":ignoreModulesAndTests",
-      ":pinAllExceptPeerDependencies",
-      ":separateMultipleMajorReleases",
-      ":combinePatchMinorReleases",
-      ":semanticPrefixFixDepsChoreOthers",
-      ":rebaseStalePrs",
-      ":prImmediately",
-      ":disableRateLimiting",
-      ":automergeAll",
-      ":ignoreUnstable",
-      ":updateNotScheduled",
-      ":enableVulnerabilityAlerts",
-      "docker:enableMajor",
-      "group:monorepos",
-      "group:recommended"
-    ]
+      "github>ctison/renovate-config"
+    ],
+    "automerge": true
   }
 }
