@@ -15,13 +15,13 @@
     "@material-ui/core": "4.11.4",
     "@material-ui/icons": "4.11.2",
     "@material-ui/lab": "4.0.0-alpha.58",
-    "next": "10.2.2",
+    "next": "10.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "swr": "0.5.6"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "10.2.2",
+    "@next/bundle-analyzer": "10.2.3",
     "@types/node": "15.6.0",
     "@types/react": "17.0.6",
     "@typescript-eslint/eslint-plugin": "4.25.0",
