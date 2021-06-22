@@ -31,11 +31,11 @@
     js-tokens "^4.0.0"
 
 "@babel/runtime-corejs3@^7.10.2":
-  version "7.14.6"
-  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.14.6.tgz#066b966eda40481740180cb3caab861a3f208cd3"
-  integrity sha512-Xl8SPYtdjcMoCsIM4teyVRg7jIcgl8F2kRtoCcXuHzXswt9UxZCS6BzRo8fcnCuP6u2XtPgvyonmEPF57Kxo9Q==
+  version "7.14.7"
+  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.14.7.tgz#0ef292bbce40ca00f874c9724ef175a12476465c"
+  integrity sha512-Wvzcw4mBYbTagyBVZpAJWI06auSIj033T/yNE0Zn1xcup83MieCddZA7ls3kme17L4NOGBrQ09Q+nKB41RLWBA==
   dependencies:
-    core-js-pure "^3.14.0"
+    core-js-pure "^3.15.0"
     regenerator-runtime "^0.13.4"
 
 "@babel/runtime@7.12.5":
@@ -922,7 +922,7 @@ convert-source-map@1.7.0:
   dependencies:
     safe-buffer "~5.1.1"
 
-core-js-pure@^3.14.0:
+core-js-pure@^3.15.0:
   version "3.15.0"
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.15.0.tgz#c19349ae0be197b8bcf304acf4d91c5e29ae2091"
   integrity sha512-RO+LFAso8DB6OeBX9BAcEGvyth36QtxYon1OyVsITNVtSKr/Hos0BXZwnsOJ7o+O6KHtK+O+cJIEj9NGg6VwFA==
@@ -1157,9 +1157,9 @@ duplexer@^0.1.2:
   integrity sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==
 
 electron-to-chromium@^1.3.723:
-  version "1.3.752"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.752.tgz#0728587f1b9b970ec9ffad932496429aef750d09"
-  integrity sha512-2Tg+7jSl3oPxgsBsWKh5H83QazTkmWG/cnNwJplmyZc7KcN61+I10oUgaXSVk/NwfvN3BdkKDR4FYuRBQQ2v0A==
+  version "1.3.753"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.753.tgz#e5aa72c2a3a97c8187131fe307f0f18d1277b6e5"
+  integrity sha512-LBJJ4qnuveWMqnwP0fP+bSl+QIxeToqBH8Bb0qVkz6YnfOZQpOW/FlkxuPn0u/zh+py6Y7x6L4qsl5aBjE9Djw==
 
 elliptic@^6.5.3:
   version "6.5.4"
