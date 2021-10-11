@@ -1,4 +1,4 @@
-FROM node:16.10.0-stretch-slim@sha256:a35df5e6d2d5d8243bff36adba6f7d0f19a682f2cfe90ac35049e103820e67dc as base
+FROM node:16.11.0-stretch-slim@sha256:03815e16c3097ddbb2949ee070da69e1bfc639b9c3565cf1e34d710c17499a80 as base
 WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install --production
@@ -10,7 +10,7 @@ RUN yarn run format
 RUN yarn run lint
 RUN yarn run build
 
-FROM node:16.10.0-stretch-slim@sha256:a35df5e6d2d5d8243bff36adba6f7d0f19a682f2cfe90ac35049e103820e67dc as prod
+FROM node:16.11.0-stretch-slim@sha256:03815e16c3097ddbb2949ee070da69e1bfc639b9c3565cf1e34d710c17499a80 as prod
 WORKDIR /app
 COPY --from=base /app/package.json ./
 COPY --from=base /app/node_modules/ ./node_modules/
